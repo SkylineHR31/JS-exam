@@ -9,7 +9,7 @@ module.exports = {
     filename: 'bundle.js'
   },
 
-    devServer: {
+  devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
     port: 9000
@@ -24,7 +24,11 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(sa|sc|c)ss$/, 
+        test: /\.html$/i,
+        loader: 'html-loader',
+      },
+      {
+        test: /\.(sa|sc|c)ss$/,
         use: [
           {
             // Adds CSS to the DOM by injecting a `<style>` tag
@@ -53,4 +57,5 @@ module.exports = {
       }
     ]
   }
+
 };

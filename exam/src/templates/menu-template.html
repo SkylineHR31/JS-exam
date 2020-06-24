@@ -1,0 +1,11 @@
+<div class="menu">
+    <span class="title"><%-title%></span>
+    <ul>
+        <% users.forEach(function(user) { %>
+        <li>
+            <%-user.id%>, <%-user.name%>
+            <button data-id=<%-user.id%>><%-buttonTitle%></button>
+        </li>
+        <% }); %>
+    </ul>
+</div>
