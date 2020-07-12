@@ -1,6 +1,7 @@
 import modal from "./modal";
 import list from "./list";
 import movie from "./movie";
+import addFilmHandler from "./addFilmHandler.js";
 
 import $ from "jquery";
 import '@popperjs/core';
@@ -13,6 +14,16 @@ import template from 'lodash.template';
 import menuTemplate from './templates/menu-template.html';
 
 const mainSection = document.querySelector("#content");
-mainSection.innerHTML = list();
-// mainSection.innerHTML = movie();
+window.onhashchange = () => {
+    if (document.location.hash === "#list") {
+        mainSection.innerHTML = list();
+    }
+
+    if (document.location.hash === "#list-film") {
+        mainSection.innerHTML = movie();
+    }
+};
+
 // mainSection.innerHTML = modal();
+modal();
+addFilmHandler();
